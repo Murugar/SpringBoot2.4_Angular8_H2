@@ -1,0 +1,41 @@
+
+<div class="container">
+	<div class="card mt-5">
+		<div class="card-header text-primary bg-warning">
+			<h1>Welcome</h1>
+		</div>
+		<div class="card-body text-info">
+			Welcome {{name}}. You can manage the customers <a
+				routerLink="/customers">here</a>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="card mt-5">
+		<div class="card-header text-warning bg-info">
+			<h1>Click here to get a customized welcome message</h1>
+		</div>
+		<div class="card-body text-danger">
+
+			<button (click)="getWelcomeMessage()" class="btn btn-success">Get
+				Welcome Message</button>
+			&nbsp;
+			<button (click)="getWelcomeMessageWithPathVariable()"
+				class="btn btn-success">Get Welcome Message With User Name</button>
+
+		</div>
+	</div>
+</div>
+
+<br/>
+
+<div class="container" *ngIf="welcomeMessageFromService">
+
+	<div class="text-danger">
+		<h5>Your customized welcome message</h5>
+		{{welcomeMessageFromService}}
+	</div>
+
+</div>

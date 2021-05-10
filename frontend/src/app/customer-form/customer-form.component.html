@@ -1,0 +1,37 @@
+
+
+<div class="container">
+
+	<div class="card mt-5">
+		<div class="card-header text-success">
+			<h1>Add or Update Customer</h1>
+
+
+		</div>
+
+		<div class="card-body text-danger">
+		
+			<form (ngSubmit)="!customerForm.invalid && onSave()"
+				#customerForm="ngForm">
+				<fieldset class="form-group">
+					<label>Name</label> <input type="text" #name="ngModel"
+						[(ngModel)]="customer.name" class="form-control" name="name"
+						required="required" minlength="5">
+				</fieldset>
+				<fieldset class="form-group">
+					<label>Birth Date</label> <input type="date"
+						[ngModel]="customer.birthDate | date:'yyyy-MM-dd'"
+						(ngModelChange)="customer.birthDate = $event" class="form-control"
+						name="birthDate">
+				</fieldset>
+				<fieldset class="form-group">
+					<label>Email</label> <input type="email" #email="ngModel"
+						[(ngModel)]="customer.email" class="form-control" name="email"
+						required="required">
+				</fieldset>
+				<button type="submit" class="btn btn-success">Save</button>
+			</form>
+		</div>
+
+	</div>
+</div>
